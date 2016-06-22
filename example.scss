@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+
+// Set base font size
+@import 'setting/rem';
+// Import functions and mixins
+@import 'mixins/rem';
+
+// Using function
+.using-function {
+  margin: r(20px auto);
+  font-size: r(28pt);
+  border-top: r(7px) solid #f90 !important;
+  background: r(#fff url('../img/icon.png') 15px 10px no-repeat);
+  background-size: r(44px auto, 50% 312px);
+}
+
+// Using mixin
+.using-mixin {
+  @include rem(margin, 20px auto);
+  @include rem(font-size, 28pt);
+  @include rem(border-top, 7px solid #f90 !important);
+  @include rem(background, #fff url('../img/icon.png') 15px 10px no-repeat);
+  @include rem(background-size, 44px auto, 50% 312px);
+
+  // Combine multiple properties
+  @include rem((
+    margin: 20px auto,
+    border-top: 7px solid #f90 !important,
+    background-size: (44px auto, 50% 312px),
+  ));
+
+  // Automatic rounding where appropriate
+  @include rem((
+    margin: 20.2px auto, // Automatically rounded
+    font-size: 28.2pt, // Not rounded
+  ));
+}
+
+// Explicitly round px before converting to rem
+.rounded {
+  @include rem_round(margin, 20.3px 8.6px);
+  padding-left: rem_round(13px / 3);
+  border-width: rr(15px * 0.7); // Shortcut!
+}
