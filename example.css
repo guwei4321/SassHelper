@@ -1,0 +1,36 @@
+.using-function {
+  margin: 1.25rem auto;
+  font-size: 1.75rem;
+  border-top: 0.4375rem solid #f90 !important;
+  background: #fff url("../img/icon.png") 0.9375rem 0.625rem no-repeat;
+  background-size: 2.75rem auto, 50% 19.5rem; }
+
+.using-mixin {
+  margin: 20px auto;
+  margin: 1.25rem auto;
+  font-size: 28px;
+  font-size: 1.75rem;
+  border-top: 7px solid #f90 !important;
+  border-top: 0.4375rem solid #f90 !important;
+  background: #fff url("../img/icon.png") 15px 10px no-repeat;
+  background: #fff url("../img/icon.png") 0.9375rem 0.625rem no-repeat;
+  background-size: 44px auto, 50% 312px;
+  background-size: 2.75rem auto, 50% 19.5rem;
+  margin: 20px auto;
+  margin: 1.25rem auto;
+  border-top: 7px solid #f90 !important;
+  border-top: 0.4375rem solid #f90 !important;
+  background-size: 44px auto, 50% 312px;
+  background-size: 2.75rem auto, 50% 19.5rem;
+  margin: 20px auto;
+  margin: 1.25rem auto;
+  font-size: 28.2px;
+  font-size: 1.7625rem; }
+
+.rounded {
+  margin: 20px 9px;
+  margin: 1.25rem 0.5625rem;
+  padding-left: 0.25rem;
+  border-width: 0.6875rem; }
+
+/*# sourceMappingURL=example.css.map */
