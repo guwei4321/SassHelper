@@ -5,7 +5,7 @@
   width: 0;
   overflow:hidden;
 }
-@mixin triangle($direction, $size, $borderColor, $content ) {
+@mixin triangle($direction, $size, $borderColor, $content: content ) {
   @extend %triangle-basic;
   @if $content == true or $content == content {
       content: '';
@@ -45,7 +45,6 @@
   }
 }
 
-// 带三角的边框
 @mixin box-arrow($position, $size, $color, $border-width, $border-color, $border-style, $offset) {
 
   $arrow-position     : left;

@@ -54,7 +54,4 @@
 .box-arrow {
   @include box-arrow(bottom, 30px, #88b7d5, 4px, #c2e1f5, solid, 75%);
 }
-.asss {
-  @include aaas(#000, 10px, left, inline-block);
-}
 // use mixin
