@@ -1,0 +1,90 @@
+// triangle
+%triangle-basic{
+  content:"";
+  height: 0;
+  width: 0;
+  overflow:hidden;
+}
+@mixin triangle($direction, $size, $borderColor, $content ) {
+  @extend %triangle-basic;
+  @if $content == true or $content == content {
+      content: '';
+  }
+  @if $content == position or $content == absolute {
+      content: '';
+      position: absolute;
+  }
+  @if $content == display or $content == inline-block {
+      content: '';
+      display: inline-block;
+  }
+
+  @if $direction == top {
+    border-top:$size dashed transparent;
+    border-right:$size dashed transparent;
+    border-bottom:$size solid $borderColor;
+    border-left:$size dashed transparent;
+  }
+  @else if $direction == right {
+    border-top:$size dashed transparent;
+    border-right:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+    border-left:$size solid $borderColor;
+  }
+  @else if $direction == bottom {
+    border-top:$size solid $borderColor;
+    border-right:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+    border-left:$size dashed transparent;
+  }
+  @else if $direction == left {
+    border-top:$size dashed transparent;
+    border-right:$size solid $borderColor;
+    border-bottom:$size dashed transparent;
+    border-left:$size dashed transparent;
+  }
+}
+
+// 带三角的边框
+@mixin box-arrow($position, $size, $color, $border-width, $border-color, $border-style, $offset) {
+
+  $arrow-position     : left;
+  $border-size        : $size + $border-width * 1.41421356;
+
+  @if ($position == right) or ($position == left) {
+    $arrow-position   : top;
+  }
+
+  position: relative;
+  background: $color;
+
+  @if ($border-width > 0) or ($border-color) {
+    @if not ($border-width > 0) {
+      $border-width : $size*.25;
+      $border-size  : $size + $border-width * 1.41421356;
+    }
+    @if not $border-color { $border-color: darken($color,5); }
+    border: $border-width $border-style $border-color;
+  }
+  &:after, &:before {
+    #{$position}: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  &:after {
+    border-#{$position}-color: $color;
+    border-width: $size;
+    #{$arrow-position}: $offset;
+    margin-#{$arrow-position}: -$size;
+  }
+  &:before {
+    border-#{$position}-color: $border-color;
+    border-width: $border-size;
+    #{$arrow-position}: $offset;
+    margin-#{$arrow-position}: -$border-size;
+  }
+}

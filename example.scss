@@ -3,8 +3,10 @@
 
 // Set base font size
 @import 'setting/rem';
-// Import functions and mixins
+// Import rem functions and mixins
 @import 'mixins/rem';
+// Import glyphs mixins
+@import 'mixins/glyphs';
 
 // Using function
 .using-function {
@@ -43,3 +45,16 @@
   padding-left: rem_round(13px / 3);
   border-width: rr(15px * 0.7); // Shortcut!
 }
+
+// glyphs
+.triangle {
+  @include triangle(top, 16px, #ddd);
+}
+
+.box-arrow {
+  @include box-arrow(bottom, 30px, #88b7d5, 4px, #c2e1f5, solid, 75%);
+}
+.asss {
+  @include aaas(#000, 10px, left, inline-block);
+}
+// use mixin
